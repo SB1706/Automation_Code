@@ -103,12 +103,14 @@ public class LoginScreen {
     public void In_App_popup(){
         print("*************Checking for In_App Popup**************");
         Functions.simpleWait(Constants.wait_1);
-
-        if (Functions.driver != null){
+        try {
             Functions.driver.findElement(inAppPopup).click();
             print("In_App Popup Clicked");
-        }else{
-        print("In app popup not found");}
+        }catch (Exception popup_error){
+            print("In app popup not found");
+        }
+
+
     try {
         Functions.driver.findElement(allow_popup).click();
         print("Allow Popup was Clicked");
