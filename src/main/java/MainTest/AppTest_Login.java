@@ -1,14 +1,16 @@
 package MainTest;
 
 
+import Locators.RandomNumberGenerator;
 import Locators.Subscription;
 import Utility.Constants;
 import Utility.Functions;
 import io.appium.java_client.android.AndroidDriver;
 import Locators.LoginScreen;
-
+import static Utility.Functions.print;
 
 import java.net.MalformedURLException;
+import java.util.Arrays;
 
 public class AppTest_Login {
     public static Functions functionCall;
@@ -22,6 +24,7 @@ public class AppTest_Login {
     public static void main(String[] args) throws MalformedURLException {
         functionCall = new Functions((AndroidDriver) driver);
         LoginScreen loginScreen = new LoginScreen((AndroidDriver) driver);
+
 
 
         Functions.MyCapabilities(); // These are my Mobile Capabilities
@@ -45,8 +48,13 @@ public class AppTest_Login {
         Functions.simpleWait(Constants.wait_3);
 
         loginScreen.In_App_popup(); // Check If in_app popup comes
+        Functions.simpleWait(Constants.wait_1);
 
+        Functions.E_mail_Daily_subscription();
 
+        String bounds = "[0,1865][1080,2201]";
+        String xpath = "//*[contains(@bounds,'" + bounds + "')]";
+        Functions.scrollToElement(Functions.driver,xpath);
     }
 }
 

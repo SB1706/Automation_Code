@@ -24,6 +24,7 @@ public class AppTest_Subscription {
 
         Functions.MyCapabilities(); // These are my Mobile Capabilities
         Functions.simpleWait(Constants.wait_5);
+
         loginScreen.allow_Button();  // When User Clicked On The Allow Button
         Functions.simpleWait(Constants.wait_1);
 
@@ -44,6 +45,23 @@ public class AppTest_Subscription {
         loginScreen.In_App_popup(); // Check If in_app popup comes
 
         subscriptionScreen.Click_On_Hamburger(); // When user click on the hamburger
+        Functions.simpleWait(Constants.wait_2);
+
+        subscriptionScreen.MySubscription(); // When user click on the My_subscription bar from hamburger
+        Functions.simpleWait(Constants.wait_2);
+
+        subscriptionScreen.SubscribeButton(); // User take subscription from PDP screen
+        Functions.simpleWait(Constants.wait_2);
+
+        subscriptionScreen.SubscriptionDaily(); // When user take Daily Subscription plan
+        Functions.simpleWait(Constants.wait_2);
+
+        subscriptionScreen.quick_selection_inc_or_dec_button(String.valueOf(driver),5);
+        Functions.simpleWait(Constants.wait_2);
+
+
+
+
 
 
     }
